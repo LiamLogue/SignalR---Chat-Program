@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SignalR Chat</title>
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans';
+            background-color: #1C1C1C;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container h1 {
+            font-family: 'Open Sans';
+            font-size: 60px;
+            color: white;
+            margin: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .container h1 .second-part {
+            text-transform: uppercase;
+            color: #66A2E5;
+        }
+
+        .chat-window {
+        }
+
+        .chat-window textarea {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: 300;
+            display: block;
+            width: 60%;
+            margin: 0px auto;
+            resize: none;
+        }
+
+        .message-box {
+        }
+
+        .message-box input[type=text], .message-box input[type=button] {
+            display: block;
+            width: 60%;
+            margin: 10px auto;
+        }
+
+        .message-box input[type=button] {
+            text-transform: uppercase;
+            color: #1C1C1C;
+            font-size: 20px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Title -->
+        <h1>SignalR<span class="second-part">Chat</span></h1>
+        <!-- Chat box -->
+        <div class="chat-window">
+            <textarea cols="50" rows="15" id="chat-window-box" readonly></textarea>
+        </div>
+        <!-- Message box -->
+        <div class="message-box">
+            <input type="text" id="message" />
+            <input type="button" id="send-message" value="Send" />
+            <input type="hidden" id="username" />
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.1.3.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            //Hub reference
+            var chat = $.connection.chatHub;
+
+            //broadcastMessage function
+            chat.client.broadcastMessage = function (name, message) {
+                //Grab username and message
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+
+                //Add message to chat-window
+                $("#chat-window-box").val($("#chat-window-box").val() + name + "> " + message + "\n");
+            };
+
+            //newConnection function
+            chat.client.newConnection = function (name) {
+                $("#chat-window-box").val($("#chat-window-box").val() + name + " has joined\n");
+            };
+
+            //Prompt for username
+            $("input#username").val(prompt("Enter your username:", ""));
+
+            //Start the connection
+            $.connection.hub.start().done(function () {
+                //Joined message
+                chat.server.newConnection($("input#username").val());
+
+                //Send-message button clicked
+                $("#send-message").click(function () {
+                    //Call 'send' method on the hub
+                    chat.server.send($("input#username").val(), $("input#message").val());
+
+                    //Focus and clear message
+                    $("input#message").val("").focus();
+
+                    $('#chat-window-box').scrollTop($('#chat-window-box')[0].scrollHeight);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

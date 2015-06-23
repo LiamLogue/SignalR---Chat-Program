@@ -1,0 +1,17 @@
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\ClientServer.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\ClientServer.pdb
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.Owin.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Newtonsoft.Json.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Owin.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.Owin.xml
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\bin\Newtonsoft.Json.xml
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\obj\Debug\ClientServer.csprojResolveAssemblyReference.cache
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\obj\Debug\ClientServer.dll
+C:\Users\liam.logue.MEASURESOFT\SignalR\ClientServer\ClientServer\obj\Debug\ClientServer.pdb
